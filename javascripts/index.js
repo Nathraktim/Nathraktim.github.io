@@ -47,8 +47,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
     text.textContent = "";
 
     for(let i = 0; i < splitText.length; i++) {
-        text.innerHTML += "<span>" + splitText[i] + "</span>";
-    }
+    const span = document.createElement('span');
+    span.textContent = splitText[i];
+    text.appendChild(span);
+}
 
     let char = 0;
     let timer = setInterval(onTick, 50);
