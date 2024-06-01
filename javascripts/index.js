@@ -9,6 +9,19 @@ tl.from('a', {
     stagger: 0.2,
 });
 
+tl.from("#content-text", {
+    duration: 2, 
+    opacity: 0, 
+    delay: 0.5
+});
+
+tl.to("#dot", {
+    duration: 2,
+    scale: 5,
+    ease: "power2.out",
+    color: "red",
+});
+
 gsap.from('.linePath', {
     duration: 4,
     opacity: 0,
