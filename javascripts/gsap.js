@@ -1,10 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-    gsap.from('.main',
+    gsap.from('.topBar',
         {
             duration: 3,
-            y: -30,
-            opacity: 0
+            opacity: 0,
+            power: 3
         });
+
+        gsap.from('.heroBody',
+            {
+                duration: 2,
+                y: 30,
+                opacity: 0,
+                power: 3
+            });
 
     gsap.from('.aboutMeIntro',
         {
