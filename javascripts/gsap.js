@@ -14,8 +14,7 @@ gsap.from('.main',
                     trigger: '.two',
                     start: 'top 90%',
                     end: 'bottom 20%',
-                    scrub: 3,
-                    pinned: true
+                    scrub: 3
                 }
             });
             gsap.from('.values',
@@ -27,8 +26,7 @@ gsap.from('.main',
                         trigger: '.values',
                         start: 'top 90%',
                         end: 'bottom 20%',
-                        scrub: 3,
-                        pinned: true
+                        scrub: 3
                     }
                 });
                 gsap.from('.dedicatedIntro',
@@ -40,8 +38,7 @@ gsap.from('.main',
                             trigger: '.dedicatedIntro',
                             start: 'top 90%',
                             end: 'bottom 20%',
-                            scrub: 3,
-                            pinned: true
+                            scrub: 3
                         }
                     });
 });
