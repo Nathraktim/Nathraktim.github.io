@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             end: 'bottom 20%',
             scrub: 3,
             pinned: true,
-            markers: true
+            markers: false
         }
     });
 
