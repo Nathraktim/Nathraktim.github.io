@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    //list as many as you'd like
+// gsap.registerPlugin(MotionPathPlugin, TextPlugin);
     gsap.from('.topBar',
         {
             duration: 3,
@@ -28,17 +30,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 opacity: 0,
                 power: 3
             });
-
-    gsap.from('.aboutMeIntro',
+            const sections = gsap.utils.toArray(".aboutMeRowRow");
+    gsap.to('.two',
         {
             duration: 3,
-            opacity: 0,
+            xPercent: -100 * (sections.length - 1),
+            // opacity: 0,
             scrollTrigger: {
-                trigger: '.aboutMeIntro',
-                start: 'top 90%',
-                end: 'bottom 20%',
+                trigger: '.two',
+                start: 'top 0%',
+                end: 'bottom 0%',
                 scrub: 3,
-                pinned: true,
+                pin: true,
                 markers: false
             }
         });
@@ -211,6 +214,19 @@ gsap.from('.five',
             markers: false
         }
 });
+gsap.to('.aboutMeRowRow',
+    {
+        // duration: 5,
+        xPercent: -90,
+        scrollTrigger: {
+            trigger: '.aboutMeRowRow',
+            start: 'top 40%',
+            end: 'bottom 0%',
+            scrub: 5,
+            // pin: true,
+            markers: false
+        }
+})
 });
 
 const backToTop = document.querySelector('.backToTop');
@@ -243,5 +259,68 @@ const backToTop = document.querySelector('.backToTop');
                 scale:1,
                 filter: 'invert(1',
                 ease: "power1.inOut"
+            });
+        });
+
+
+        let state = 0;
+
+        const navIcon = document.getElementById('navIcon');
+        const navBaar = document.getElementById('navBaar');
+        function toggleNav() {
+            if (state === 0) {
+                // Show navBaar with animation
+                gsap.fromTo(navBaar, {
+                    opacity: 0,
+                    y: -50 // Start position above the viewport
+                }, {
+                    duration: 0.5,
+                    opacity: 1,
+                    y: 0, // End position
+                    display: 'block',
+                    ease: 'power2.out',
+                    onStart: () => navBaar.style.display = 'block'
+                });
+                state = 1;
+            } else {
+                // Hide navBaar with animation
+                gsap.to(navBaar, {
+                    duration: 0.5,
+                    opacity: 0,
+                    y: -50, // Move above the viewport
+                    ease: 'power2.in',
+                    onComplete: () => {
+                        navBaar.style.display = 'none';
+                    }
+                });
+                state = 0;
+            }
+        }
+
+        navIcon.addEventListener('click', toggleNav);
+        // navItems.forEach(item => {
+        //     item.addEventListener('click', toggleNav);
+        // });
+        // Optional: handle close button inside navBaar
+        document.querySelector('.closeBtn').addEventListener('click', () => {
+            if (state === 1) toggleNav(); // Close if open
+        });
+
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loader');
+            const content = document.getElementById('main');
+
+            // Hide the loader with animation
+            gsap.to(loader, {
+                duration: 0.5, // Duration of the fade-out animation
+                x: '-100vw',
+                // opacity: 0,
+                onComplete: () => {
+                    // After the animation, set display to 'none'
+                    loader.style.display = 'none';
+                    // Show the main content
+                    content.classList.remove('invisible');
+                    content.classList.add('visible', gsap.from(main, {opacity: 0, duration: 1}));
+                }
             });
         });

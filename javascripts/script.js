@@ -17,12 +17,41 @@ const name = "Raktim";
         if (initial) {
           animation.playSegments([0, 14], true);
           initial = false;
+          gsap.to(".navIcon", {
+            duration: 0.5,
+            rotate: 90,
+            ease: "power1.inOut",
+          });
         } else {
           animation.playSegments([14, 0], true);
           initial = true;
+          gsap.to(".navIcon", {
+            duration: 0.5,
+            rotate: 0,
+            ease: "power1.inOut",
+          });
         }
       });
 
-document.querySelector(".githubIcon").addEventListener("click", function() {
-  console.log("clicked");
-});
+      document.querySelector('.closeBtn').addEventListener('click', () => {
+        if (initial) {
+          animation.playSegments([0, 14], true);
+          initial = false;
+          gsap.to(".navIcon", {
+            duration: 0.5,
+            rotate: 90,
+            ease: "power1.inOut",
+          });
+        } else {
+          animation.playSegments([14, 0], true);
+          initial = true;
+          gsap.to(".navIcon", {
+            duration: 0.5,
+            rotate: 0,
+            ease: "power1.inOut",
+          });
+        }
+    });
+
+
+    

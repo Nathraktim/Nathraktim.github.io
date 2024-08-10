@@ -1,0 +1,12 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /scripts/
+
+# Allow everything else
+Allow: /
+
+# Block a specific crawler (e.g., BadBot)
+User-agent: BadBot
+Disallow: /
