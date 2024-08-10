@@ -1,4 +1,6 @@
+
 document.addEventListener('DOMContentLoaded', () => {
+  
     //list as many as you'd like
 // gsap.registerPlugin(MotionPathPlugin, TextPlugin);
     gsap.from('.topBar',
@@ -267,31 +269,32 @@ const backToTop = document.querySelector('.backToTop');
 
         const navIcon = document.getElementById('navIcon');
         const navBaar = document.getElementById('navBaar');
+        const navBarHeight = navBaar.getBoundingClientRect().height;
         function toggleNav() {
             if (state === 0) {
                 // Show navBaar with animation
-                gsap.fromTo(navBaar, {
-                    opacity: 0,
-                    y: -50 // Start position above the viewport
-                }, {
+                gsap.to(navBaar, {
+                    duration: 1,
+                    yPercent: 100,
+                    scrub: 3,
+                });
+                gsap.to('.navIcon', {
                     duration: 0.5,
-                    opacity: 1,
-                    y: 0, // End position
-                    display: 'block',
-                    ease: 'power2.out',
-                    onStart: () => navBaar.style.display = 'block'
+                    y: `${navBarHeight}px`,
+                    ease: 'power2.in',
                 });
                 state = 1;
             } else {
                 // Hide navBaar with animation
                 gsap.to(navBaar, {
+                    duration: 1,
+                    yPercent: -100,
+                    scrub: 3,
+                });
+                gsap.to('.navIcon', {
                     duration: 0.5,
-                    opacity: 0,
-                    y: -50, // Move above the viewport
+                    y: 0,
                     ease: 'power2.in',
-                    onComplete: () => {
-                        navBaar.style.display = 'none';
-                    }
                 });
                 state = 0;
             }
@@ -303,7 +306,69 @@ const backToTop = document.querySelector('.backToTop');
         // });
         // Optional: handle close button inside navBaar
         document.querySelector('.closeBtn').addEventListener('click', () => {
-            if (state === 1) toggleNav(); // Close if open
+            gsap.to(navBaar, {
+                duration: 1,
+                yPercent: -100,
+                scrub: 3,
+            });
+            gsap.to('.navIcon', {
+                duration: 0.5,
+                y: 0,
+                ease: 'power2.in',
+            });
+            state = 0; // Close if open
+        });
+        document.querySelector('.closeBtn2').addEventListener('click', () => {
+            gsap.to(navBaar, {
+                duration: 1,
+                yPercent: -100,
+                scrub: 3,
+            });
+            gsap.to('.navIcon', {
+                duration: 0.5,
+                y: 0,
+                ease: 'power2.in',
+            });
+            state = 0; // Close if open
+        });
+        document.querySelector('.closeBtn3').addEventListener('click', () => {
+            gsap.to(navBaar, {
+                duration: 1,
+                yPercent: -100,
+                scrub: 3,
+            });
+            gsap.to('.navIcon', {
+                duration: 0.5,
+                y: 0,
+                ease: 'power2.in',
+            });
+            state = 0; // Close if open
+        });
+        document.querySelector('.closeBtn4').addEventListener('click', () => {
+            gsap.to(navBaar, {
+                duration: 1,
+                yPercent: -100,
+                scrub: 3,
+            });
+            gsap.to('.navIcon', {
+                duration: 0.5,
+                y: 0,
+                ease: 'power2.in',
+            });
+            state = 0; // Close if open
+        });
+        document.querySelector('.closeBtn5').addEventListener('click', () => {
+            gsap.to(navBaar, {
+                duration: 1,
+                yPercent: -100,
+                scrub: 3,
+            });
+            gsap.to('.navIcon', {
+                duration: 0.5,
+                y: 0,
+                ease: 'power2.in',
+            });
+            state = 0; // Close if open
         });
 
         window.addEventListener('load', () => {
