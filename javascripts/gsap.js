@@ -357,19 +357,19 @@ const backToTop = document.querySelector('.backToTop');
             });
             state = 0; // Close if open
         });
-        document.querySelector('.closeBtn5').addEventListener('click', () => {
-            gsap.to(navBaar, {
-                duration: 1,
-                yPercent: -100,
-                scrub: 3,
-            });
-            gsap.to('.navIcon', {
-                duration: 0.5,
-                y: 0,
-                ease: 'power2.in',
-            });
-            state = 0; // Close if open
-        });
+        // document.querySelector('.closeBtn5').addEventListener('click', () => {
+        //     gsap.to(navBaar, {
+        //         duration: 1,
+        //         yPercent: -100,
+        //         scrub: 3,
+        //     });
+        //     gsap.to('.navIcon', {
+        //         duration: 0.5,
+        //         y: 0,
+        //         ease: 'power2.in',
+        //     });
+        //     state = 0; // Close if open
+        // });
 
         window.addEventListener('load', () => {
             const loader = document.getElementById('loader');
