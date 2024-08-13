@@ -29,9 +29,10 @@
     <link rel="apple-touch-icon" href="https://raktim.me/apple-touch-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="/stylesheets/output.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 <!--     <link rel="stylesheet" href="/stylesheets/style.css"> -->
-    <script src="/javascripts/tailwind.js"></script>
+    <!-- <script src="/javascripts/tailwind.js"></script> -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -51,7 +52,7 @@
     ga('send', 'pageview');
     </script>
     <!-- End Google Analytics -->
-    <script>
+    <!-- <script>
       tailwind.config = {
         theme: {
           extend: {
@@ -74,7 +75,7 @@
           },
         },
       };
-    </script>
+    </script> -->
     <style>
         body {
             scroll-behavior: smooth; /* Enables smooth scrolling */
@@ -138,6 +139,14 @@
             display: none !important;
           }
 }
+@media (min-width: 768px) {
+        .services {
+    grid-template-areas:
+        "services services"
+        "services services"
+        "services services";
+        gap: 1.5rem;
+}}
     </style>
 </head>
 <body>
@@ -254,8 +263,8 @@
       </section>
       <section id="about" class="two w-full h-[100vh] relative bg-white">
         <div class="w-full h-full relative">
-          <div class="aboutMeIntro absolute pl-[9.2%] pr-[9.2%] top-[7.5%] w-full"><div class=""><span class="font-semibold text-[15.5px] text-colorSix">About Me</span><br><span class="font-light text-[15.5px] text-colorSix">Introduction</span></div></div>
-          <div class="aboutMeRow dedicatedIntro absolute flex pl-[9.2%] pr-[9.2%] top-[50%] -translate-y-[50%]">
+          <div class="aboutMeIntro absolute pl-[9.2%] top-[7.5%] w-full"><div class=""><span class="font-semibold text-[15.5px] text-colorSix">About Me</span><br><span class="font-light text-[15.5px] text-colorSix">Introduction</span></div></div>
+          <div class="aboutMeRow dedicatedIntro absolute flex top-[50%] -translate-y-[50%]">
             <div class="w-[300vw] aboutMeRowRow flex flex-row inline">
               <div class="w-[100vw]">
                 <div class="items-center text-center pl-[8%] pr-[8%]"><span class="font-light text-[19px] text-colorFour">"Hi, I'm Raktim, a dedicated full-stack web developer<br>based in India. With a deep understanding of both<br>front-end and back-end technologies, I bring a comprehensive approach to every project I work on."</span></div>
@@ -288,7 +297,7 @@
             <div class="w-full h-100% flex flex-col items-center p-[6.5vh]"><div class="arrowSvg w-[100px]"><svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="78.484" height="43.075" viewBox="0 0 78.484 43.075">
               <path id="Path_6" data-name="Path 6" d="M145,0l43.075,39.752L145,78.484l17.859-38.732Z" transform="translate(78.484 -145) rotate(90)" fill="#4a4537"/></svg></div>
           </div>
-          <div class="w-full h-full flex flex-col">
+          <div class="services w-full h-full grid">
             <div class="service1 text-white pb-[6.279vh]">
               <h1 class="text-[20px] font-regular">Custom Website Development</h1>
               <p class="text-[12px] font-light">I create fully customized websites that align with your brand and business goals. My websites are designed for optimal performance, user experience, and scalability.</p>
@@ -334,7 +343,7 @@
             <div class="flex flex-col items-center">
               <h1 class="text-[17px] font-light text-white">Contact Me Directly For More Details</h1>
               <div class="p-[1.6vh]">
-                <div class="w-fit pl-2 pr-2 h-[3vh] bg-white text-black rounded-full flex flex-row align-middle items-center justify-center gap-1.5"><a href="#getintouch" class="font-medium text-[13.5px]">Get in Touch</a><div><svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="9.483" height="12.438" viewBox="0 0 9.483 12.438">
+                <div class="w-fit h-[3vh] bg-white text-black rounded-full flex flex-row align-middle items-center justify-center gap-1.5 pl-2 pr-2"><a href="#getintouch" class="font-medium text-[13.5px]">Get in Touch</a><div><svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg" width="9.483" height="12.438" viewBox="0 0 9.483 12.438">
                   <path id="Path_7" data-name="Path 7" d="M6.879,2.982C6.879.611,9.827,1,10.951,1.932L15.518,5.7a2.1,2.1,0,0,1,0,3.364l-4.567,3.772c-1.87,1.544-4.073.693-4.073-1.024Z" transform="translate(-6.878 -1.206)"/>
                 </svg></div></div>
               </div>
@@ -348,7 +357,12 @@
           <div class="pl-[9.2%] pr-[9.2%] p-[7.5vh] w-full">
             <div class=""><span class="font-semibold text-[15.5px] text-colorFourteen">Contact</span><br><span class="font-light text-[15.5px] text-colorTwo">Get In Touch</span>
             </div>
-            <div class="w-full h-full pt-[4.6vh]"><form class="flex flex-col gap-4" id="contactForm">
+            <div class="absolute w-[40vw] h-[40vw] z-[500] top-[50%] right-[0%] -translate-y-[50%] mx-[9.2%] lt-md:hidden lg:w-[410px] lg:h-[410px] lg:right-[6%]">
+              <div class="filter-hue-rotate-180 w-[40vw] h-[40vw] z-[500]mx-[9.2%] lt-md:hidden lg:w-[410px] lg:h-[410px]">
+                <video data-v-2bda1b1e="" autoplay="autoplay" muted="muted" loop="loop" playsinline="" class="illustration__preview illustration__preview--video"><source src="/assets/videos/msg.webm" type="video/webm"></video>
+              </div>
+            </div>
+            <div class="w-full md:w-[40vw] h-full pt-[4.6vh]"><form class="flex flex-col gap-4" id="contactForm">
               <input id="name" class="w-full h-12 p-2 bg-colorEleven placeholder-colorFourteen text-colorFourteen rounded-xl pl-6 rounded-tl-3xl rounded-tr-3xl text-[17px] focus:ring-0" type="text" placeholder="Name" required>
               <input id="email" class="w-full h-12 text-colorFourteen p-2 bg-colorEleven placeholder-colorFourteen rounded-xl pl-6 text-[17px] focus:ring-white" type="email" placeholder="Email Address" required>
               <input id="phone" class="w-full h-12 p-2 bg-colorEleven text-colorFourteen placeholder-colorFourteen rounded-xl pl-6 text-[17px]" type="number" placeholder="Phone Number" required>
@@ -374,7 +388,7 @@
           </div>
         </div>
       </section>
-      <section class="six w-full h-full relative bg-black">
+      <!-- <section class="six w-full h-full relative bg-black">
         <div class="w-full h-full xoverflow-hidden relative">
           <div class="pl-[9.2%] pr-[9.2%] p-[7.5vh] w-full flex flex-col gap-7">
             <div class="quickLinks">
@@ -413,15 +427,57 @@
             </div>
           </div>
         </div>
+      </section> -->
+      <section class="six w-full h-full relative bg-black">
+        <div class="w-full h-full xoverflow-hidden relative">
+          <div class="pl-[9.2%] pr-[9.2%] p-[7.5vh] w-full flex flex-col gap-7">
+            <div class="footer w-full grid gap-7 grid-cols-1 md:grid-cols-3">
+              <div class="quickLinks">
+                <h1 class="text-[19px] font-light text-colorTwo pb-2">Quick Links</h1>
+                <ul>
+                  <li><a class="text-[15px] font-light text-colorTwelve" href="/">Home</a></li>
+                  <li><a class="text-[15px] font-light text-colorTwelve" href="/" href="/">About</a></li>
+                  <li><a class="text-[15px] font-light text-colorTwelve" href="/" href="/">Portfolio</a></li>
+                  <li><a class="text-[15px] font-light text-colorTwelve" href="/" href="/">Services</a></li>
+                  <li><a class="text-[15px] font-light text-colorTwelve" href="/" href="/">Contact</a></li>
+                </ul>
+              </div>
+              <div class="socialMediaLinks">
+                <h1 class="text-[19px] font-light text-colorTwo pb-2">Social Media Links</h1>
+                <ul class="flex flex-row gap-4">
+                  <li><a class="githubLink" href="https://www.github.com/nathraktim/">
+                    <img class="w-[22px] h-[22px]" src="./assets/icons/githubIconLink.svg" alt="GitHub">
+                  </a></li>
+                  <li><a class="linkedinLink" href="https://www.linkedin.com/in/raktimjyoti-nath-738361234/">
+                    <img class="w-[22px] h-[22px]" src="./assets/icons/linkedinIconLink.svg" alt="LinkedIn Icon">
+                  </a></li>
+                  <li><a class="xLink" href="https://x.com/RaktimN81395597/">
+                    <img class="w-[22px] h-[22px]" src="./assets/icons/xIconLink.svg" alt="X Icon">
+                  </a></li>
+                </ul>
+              </div>
+              <div class="contactInfo">
+                <h1 class="text-[19px] font-light text-colorTwo pb-2">Contact Information</h1>
+                <ul class="w-full text-[15px] font-light text-colorTwelve overflow-hidden relative">
+                  <li><a href="mailto:raktimjyotinath59684@gmail.com" class="inline-block whitespace-nowrap">raktimjyotinath59684@gmail.com</a></li>
+                  <li><a href="tel:+918822374214">+91 88223 74214</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="w-full flex flex-col items-center pt-10 pb-5"><h1 class="text-[15px] font-extralight  text-white">© 2024 Raktim. All rights reserved.</h1>
+              <h1 class="text-[12.5px] font-light text-colorEight">Designed by Raktim</h1>
+            </div>
+          </div>
+        </div>
       </section>
     </div>
 <!--     <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script> -->
-    <script>
+    <!-- <script>
       const scroll = new LocomotiveScroll({
     el: document.querySelector('.main'),
     smooth: true
 });
-    </script>
+    </script> -->
     <script src="./javascripts/iconAnimation.js"></script>
     <script>
 downloadResume = () => {

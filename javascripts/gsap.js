@@ -36,7 +36,8 @@ document.addEventListener('DOMContentLoaded', () => {
     gsap.to('.two',
         {
             duration: 3,
-            xPercent: -100 * (sections.length - 1),
+            // x: - (sections.length -1),
+            x: 0.5,
             // opacity: 0,
             scrollTrigger: {
                 trigger: '.two',
@@ -54,8 +55,8 @@ document.addEventListener('DOMContentLoaded', () => {
             y: 50,
             scrollTrigger: {
                 trigger: '.values',
-                start: 'top 90%',
-                end: 'bottom 20%',
+                start: 'top 95%',
+                end: 'bottom 50%',
                 scrub: 3,
                 pinned: true,
                 markers: false
@@ -82,8 +83,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 x: 70,
                 scrollTrigger: {
                     trigger: '.asA',
-                    start: 'top 90%',
-                    end: 'bottom 20%',
+                    start: 'top 95%',
+                    end: 'bottom 50%',
                     scrub: 3,
                     pinned: true,
                     markers: false
@@ -98,7 +99,7 @@ document.addEventListener('DOMContentLoaded', () => {
             scrollTrigger: {
                 trigger: '.arrowSvg',
                 start: 'top 90%',
-                end: 'bottom 20%',
+                end: 'bottom 50%',
                 scrub: 3,
                 pinned: true,
                 markers: false
@@ -111,9 +112,9 @@ gsap.from('.service1',
         x: 70,
         scrollTrigger: {
             trigger: '.service1',
-            start: 'top 85%',
-            end: 'bottom 65%',
-            scrub: 3,
+            start: 'top 100%',
+            end: 'top 80%',
+            scrub: 5,
             pinned: true,
             markers: false
         }
@@ -125,9 +126,9 @@ gsap.from('.service2',
         x: 70,
         scrollTrigger: {
             trigger: '.service2',
-            start: 'top 85%',
-            end: 'bottom 65%',
-            scrub: 3,
+            start: 'top 100%',
+            end: 'top 80%',
+            scrub: 5,
             pinned: true,
             markers: false
         }
@@ -138,10 +139,10 @@ gsap.from('.service3',
         opacity: 0,
         x: 70,
         scrollTrigger: {
-            trigger: '.service3',
-            start: 'top 85%',
-            end: 'bottom 65%',
-            scrub: 3,
+            trigger: '.service2',
+            start: 'top 100%',
+            end: 'top 80%',
+            scrub: 5,
             pinned: true,
             markers: false
         }
@@ -153,9 +154,9 @@ gsap.from('.service4',
         x: 70,
         scrollTrigger: {
             trigger: '.service4',
-            start: 'top 85%',
-            end: 'bottom 65%',
-            scrub: 3,
+            start: 'top 100%',
+            end: 'top 80%',
+            scrub: 5,
             pinned: true,
             markers: false
         }
@@ -167,9 +168,9 @@ gsap.from('.service5',
         x: 70,
         scrollTrigger: {
             trigger: '.service5',
-            start: 'top 85%',
-            end: 'bottom 65%',
-            scrub: 3,
+            start: 'top 100%',
+            end: 'top 80%',
+            scrub: 5,
             pinned: true,
             markers: false
         }
@@ -181,22 +182,23 @@ gsap.from('.service6',
         x: 70,
         scrollTrigger: {
             trigger: '.service6',
-            start: 'top 85%',
-            end: 'bottom 65%',
-            scrub: 3,
+            start: 'top 100%',
+            end: 'top 80%',
+            scrub: 5,
             pinned: true,
             markers: false
         }
 });
+
 gsap.from('.service7',
     {
         duration: 3,
         opacity: 0,
-        x: 70,
+        y: 70,
         scrollTrigger: {
             trigger: '.service7',
-            start: 'top 85%',
-            end: 'bottom 65%',
+            start: 'top 95%',
+            end: 'bottom 70%',
             scrub: 3,
             pinned: true,
             markers: false
@@ -209,8 +211,8 @@ gsap.from('.five',
         y: 50,
         scrollTrigger: {
             trigger: '.five',
-            start: 'top 85%',
-            end: 'bottom 65%',
+            start: 'top 90%',
+            end: 'top 65%',
             scrub: 3,
             pinned: true,
             markers: false
@@ -385,7 +387,7 @@ const backToTop = document.querySelector('.backToTop');
                     loader.style.display = 'none';
                     // Show the main content
                     content.classList.remove('invisible');
-                    content.classList.add('visible', gsap.from(main, {opacity: 0, duration: 1}));
+                    // content.classList.add('visible', gsap.from(main, {opacity: 0, duration: 1}));
                 }
             });
         });
