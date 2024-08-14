@@ -33,6 +33,8 @@ const name = "Raktim";
         }
       });
 
+      gsap.registerPlugin(ScrollTrigger)
+
       document.querySelector('.closeBtn').addEventListener('click', () => {
         if (initial) {
           animation.playSegments([0, 14], true);
