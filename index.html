@@ -149,18 +149,22 @@
     </style>
 </head>
 <body>
-    <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-F6JW4F3ENZ"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'analytics_storage': 'denied'
+  });
   gtag('js', new Date());
 
-  gtag('config', 'G-F6JW4F3ENZ');
+  gtag('config', 'G-F6JW4F3ENZ', {
+    'anonymize_ip': true, // This helps anonymize IPs
+    'cookie_flags': 'SameSite=None;Secure' // Adjust cookie settings
+  });
 </script>
-    <!-- Google Tag Manager (noscript) -->
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5R278KB3"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
     <!-- End Google Tag Manager (noscript) -->
     <div id="loader" class="loader w-[100vw] h-[100vh] bg-black fixed z-[9999] text-white font-thin flex align-middle items-center justify-center">Loading...</div>
     <div id="navBaar" class="z-[999] w-full bg-white w-full p-5 pb-5 fixed translate-y-[-299.5px]">
