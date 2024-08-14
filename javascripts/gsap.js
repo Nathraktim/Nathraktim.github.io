@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   
     //list as many as you'd like
+    gsap.registerPlugin(ScrollTrigger)
 // gsap.registerPlugin(MotionPathPlugin, TextPlugin);
     gsap.from('.topBar',
         {
