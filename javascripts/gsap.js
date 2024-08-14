@@ -1,21 +1,20 @@
-
+gsap.registerPlugin(ScrollTrigger)
 document.addEventListener('DOMContentLoaded', () => {
   
     //list as many as you'd like
-    gsap.registerPlugin(ScrollTrigger)
 // gsap.registerPlugin(MotionPathPlugin, TextPlugin);
     gsap.from('.topBar',
         {
             duration: 3,
             opacity: 0,
-            power: 3
+            ease: "power3"
         });
     gsap.from('.backToTop',{
         duration: 2,
         opacity: 0,
         scale: 0.7,
         y: 30,
-        power: 2,
+        ease: "power2",
         scrollTrigger: {
             trigger: '.aboutMeIntro',
             start: 'top 90%',
@@ -31,7 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 duration: 2,
                 y: 30,
                 opacity: 0,
-                power: 3
+                ease: "power3"
             });
             const sections = gsap.utils.toArray(".aboutMeRowRow");
     gsap.to('.two',
