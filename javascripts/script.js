@@ -1,9 +1,3 @@
-const name = "Raktim";
-      document.querySelectorAll(".name");
-        document.querySelectorAll(".name").forEach((element) => {
-            element.innerHTML = name;
-        });
-
       var animation = lottie.loadAnimation({
         container: document.getElementById("navIcon"),
         renderer: "svg",

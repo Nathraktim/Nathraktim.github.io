@@ -51,6 +51,19 @@
     ga('create', 'UA-XXXXX-Y', 'auto');
     ga('send', 'pageview');
     </script>
+     <script>
+      function backToTop1() {
+          const scrollDuration = 1500;
+          const scrollStep = window.scrollY / (scrollDuration / 15);
+          const scrollInterval = setInterval(function() {
+              if (window.scrollY > 0) {
+                  window.scrollBy(0, -scrollStep);
+              } else {
+                  clearInterval(scrollInterval);
+              }
+          }, 15);
+      };
+  </script>
     <!-- End Google Analytics -->
     <!-- <script>
       tailwind.config = {
@@ -167,7 +180,7 @@
     <div id="navBaar" class="z-[999] w-full bg-white w-full p-5 pb-5 fixed translate-y-[-299.5px]">
       <div class="px-4 py-4">
         <div class="w-full bg-red pl-[9.2%] pr-[9.2%] p-2 text-right text-[15px]">
-          <a href="#home" class="nav-item no-underline text-black closeBtn">Home</a>
+          <a onclick="backToTop1()" class="nav-item no-underline text-black closeBtn">Home</a>
         </div>
         <div class="w-full bg-red pl-[9.2%] pr-[9.2%] p-2 text-right text-[15px]">
           <a href="#about" class="nav-item no-underline text-black closeBtn2">About me</a>
@@ -190,7 +203,7 @@
       </div>
     <div id="main" class="main overflow-hidden invisible">
         <div class="backToTop fixed rounded-full z-[700] w-16 h-16 right-[7%] bottom-[10%] overflows">
-        <a href="#top">
+        <a onclick="backToTop1()">
           <svg class="w-full h-full mix-blend-multiply filter invert" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,255.99008,255.99008">
             <g fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
               <g transform="translate(256,0) rotate(90) scale(5.12,5.12)">
@@ -205,7 +218,7 @@
           <div class="w-full h-full relative">
             <div class="topBar absolute top-[11.8%] bg-red w-full pl-[9.2%] pr-[9.2%] flex flex-row justify-between items-center">
               <div class="text-[26.5px] font-medium">Hi, This is <span>Raktim</span>.</div>
-              <div id="navIcon" class="fixed navIcon text-[26.5px] font-medium w-[34px] h-[34px] cursor-pointer z-50 right-[9.2%]"></div>
+              <div id="navIcon" class="fixed navIcon w-[34px] h-[34px] cursor-pointer z-50 right-[9.2%] mix-blend-difference"></div>
             </div>
             <div class="heroBody absolute w-full flex flex-col items-center text-center h-full">
                 <div class="relative w-full h-full">
@@ -243,7 +256,7 @@
             <div class="relative w-full h-full overflow-hidden">
               <div class="absolute pl-[15%] pr-[15%] flex flex-col gap-5 top-[15%]"><span class="font-light text-[16.5px] text-colorFour">I'm Raktim, a passionate full-stack web developer with expertise in the MERN stack, Flutter, React Native, Electron.js, and more. I specialize in crafting custom websites, web apps, mobile apps, and desktop applications that drive business success.</span>
               <div class="readyGetbutton -bottom-[47%] flex flex-col gap-1 pt-[2vh]"><span class="font-medium text-[13.5px]">Ready to bring your ideas to life?</span>
-                <div class="w-fit pl-2 pr-2 h-[3vh] bg-colorFive text-colorTwo rounded-full flex align-middle items-center justify-center"><a href="#getintouch" class="font-medium text-[13.5px]">Get in Touch</a></div></div></div>
+                <div id="getInTouch1" class="w-fit pl-2 pr-2 h-[3vh] bg-colorFive text-colorTwo rounded-full flex align-middle items-center justify-center"><p class="getInTouch font-medium text-[13.5px] cursor-pointer">Get in Touch</p></div></div></div>
             </div>
             <div class="bottomStyle absolute -bottom-[0] translate-y-[50%] h-10 w-full flex flex-row align-middle items-center justify-center gap-[1.7vw]">
               <div class="w-[35px] h-[35px] bg-[#F4DB99] rounded-full"></div>
@@ -436,10 +449,11 @@
                 <h1 class="text-[19px] font-light text-colorTwo pb-2">Quick Links</h1>
                 <ul>
                   <li><a class="text-[15px] font-light text-colorTwelve" href="/">Home</a></li>
-                  <li><a class="text-[15px] font-light text-colorTwelve" href="/" href="/">About</a></li>
-                  <li><a class="text-[15px] font-light text-colorTwelve" href="/" href="/">Portfolio</a></li>
-                  <li><a class="text-[15px] font-light text-colorTwelve" href="/" href="/">Services</a></li>
-                  <li><a class="text-[15px] font-light text-colorTwelve" href="/" href="/">Contact</a></li>
+                  <li><a class="text-[15px] font-light text-colorTwelve" href="/">About</a></li>
+                  <li><a class="text-[15px] font-light text-colorTwelve" href="/">Portfolio</a></li>
+                  <li><a class="text-[15px] font-light text-colorTwelve" href="/">Services</a></li>
+                  <li><a class="text-[15px] font-light text-colorTwelve" href="/">Contact</a></li>
+                  <li><a class="text-[15px] font-bold text-white cursor-pointer" onclick=downloadResume()>Download resume</a></li>
                 </ul>
               </div>
               <div class="socialMediaLinks">
@@ -534,6 +548,31 @@ downloadResume = () => {
           }
       });
   </script>
-    <!-- <script src="dark.js"></script> -->
+
+  <script>
+    const getInTouch = document.getElementById('getInTouch1');
+getInTouch.addEventListener('click', function() {
+    const target = document.getElementById('contact');
+    const targetPosition = target.getBoundingClientRect().top; 
+    const startPosition = window.pageYOffset;
+    const duration = 1500;
+    const startTime = performance.now();
+
+    function scrollAnimation(currentTime) {
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        const easeInOutQuad = t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
+        const scrollAmount = easeInOutQuad(progress) * targetPosition;
+        
+        window.scrollTo(0, startPosition + scrollAmount);
+
+        if (progress < 1) {
+            requestAnimationFrame(scrollAnimation);
+        }
+    }
+
+    requestAnimationFrame(scrollAnimation);
+});
+  </script>
   </body>
 </html>
