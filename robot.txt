@@ -10,3 +10,18 @@ Allow: /
 # Block a specific crawler (e.g., BadBot)
 User-agent: BadBot
 Disallow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: *
+Allow: /
