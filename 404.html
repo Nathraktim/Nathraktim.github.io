@@ -21,13 +21,12 @@
         
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
-            color: #fff;
+            color: #000;
         }
         
         .container {
@@ -40,8 +39,8 @@
             font-weight: bold;
             line-height: 1;
             margin-bottom: 20px;
-            text-shadow: 4px 4px 8px rgba(0,0,0,0.2);
-            animation: float 3s ease-in-out infinite;
+            text-shadow: 4px 4px 8px rgba(0,0,0,0.1);
+            animation: float 1s ease-in-out infinite;
         }
         
         @keyframes float {
@@ -81,8 +80,8 @@
         }
         
         .btn-primary {
-            background: white;
-            color: #667eea;
+            background: black;
+            color: #ffffff;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
         }
         
@@ -93,8 +92,8 @@
         
         .btn-secondary {
             background: rgba(255,255,255,0.2);
-            color: white;
-            border: 2px solid white;
+            color: black;
+            border: 2px solid black;
             backdrop-filter: blur(10px);
         }
         
@@ -127,7 +126,7 @@
         }
         
         .suggestions a {
-            color: white;
+            color: black;
             text-decoration: none;
             font-size: 16px;
             display: inline-block;
@@ -140,6 +139,41 @@
         .suggestions a:hover {
             background: rgba(255,255,255,0.2);
             transform: translateX(5px);
+        }
+        
+        h3 {
+            position: relative;
+        }
+        
+        h3 .word-wrapper {
+            display: inline-block;
+            position: relative;
+            transition: margin-right 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+            margin-right: 0;
+        }
+        
+        h3:hover .word-wrapper {
+            margin-right: 35px;
+        }
+        
+        h3 .hidden-text {
+            position: absolute;
+            opacity: 0;
+            max-width: 0;
+            overflow: hidden;
+            transition: opacity 0.6s cubic-bezier(0.4, 0.0, 0.2, 1), 
+                        max-width 0.6s cubic-bezier(0.4, 0.0, 0.2, 1),
+                        transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1);
+            transform: translateX(-5px);
+            white-space: nowrap;
+            left: 100%;
+            top: 0;
+        }
+        
+        h3:hover .hidden-text {
+            opacity: 0.2;
+            max-width: 100px;
+            transform: translateX(0);
         }
         
         @media (max-width: 768px) {
@@ -171,25 +205,15 @@
     <div class="container">
         <div class="error-code">404</div>
         <h1>Oops! Page Not Found</h1>
+        <h3><span class="word-wrapper">What<span class="hidden-text">TF*</span></span> are u looking for?</h3>
         <p>The page you're looking for seems to have vanished into the digital void. Don't worry, even the best developers encounter broken links!</p>
         
         <div class="buttons">
             <a href="/" class="btn btn-primary">← Back to Home</a>
             <a href="javascript:history.back()" class="btn btn-secondary">Go Back</a>
         </div>
-        
-        <div class="suggestions">
-            <h2>🔍 Here's what you can do:</h2>
-            <ul>
-                <li><a href="/">→ Visit Homepage</a></li>
-                <li><a href="/#portfolio">→ View Portfolio Projects</a></li>
-                <li><a href="/#about">→ Learn About Me</a></li>
-                <li><a href="/#contact">→ Get in Touch</a></li>
-            </ul>
-        </div>
     </div>
     
-    <!-- Structured Data for 404 Page -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
