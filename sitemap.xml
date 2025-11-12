@@ -51,19 +51,4 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
-  <!-- Note: Add individual project pages here as you create them -->
-  <!-- Example format:
-  <url>
-    <loc>https://nathraktim.github.io/portfolio/project-name</loc>
-    <lastmod>2025-11-13</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-    <image:image>
-      <image:loc>https://nathraktim.github.io/images/project-name.jpg</image:loc>
-      <image:title>Project Title</image:title>
-    </image:image>
-  </url>
-  -->
-  
 </urlset>
