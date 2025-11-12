@@ -4,3 +4,12 @@ tailwind.config.js
 src
 package.json
 package-lock.json
+
+# SEO Documentation (reference only, not needed in repo)
+*.md
+!CONTRIBUTING.md
+!CODE_OF_CONDUCT.md
+.github/
+.vscode
+scripts/
+index.html.backup

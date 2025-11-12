@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage - Highest Priority -->
+  <url>
+    <loc>https://nathraktim.github.io/</loc>
+    <lastmod>2025-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://nathraktim.github.io/images/raktim.jpg</image:loc>
+      <image:title>Raktim Nath - Web Developer</image:title>
+    </image:image>
+  </url>
+  
+  <!-- Main Sections -->
+  <url>
+    <loc>https://nathraktim.github.io/#about</loc>
+    <lastmod>2025-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://nathraktim.github.io/#portfolio</loc>
+    <lastmod>2025-11-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  
+  <url>
+    <loc>https://nathraktim.github.io/#skills</loc>
+    <lastmod>2025-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://nathraktim.github.io/#contact</loc>
+    <lastmod>2025-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Projects/External Links -->
+  <url>
+    <loc>https://nathraktim.github.io/react-flexi-window/</loc>
+    <lastmod>2025-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Note: Add individual project pages here as you create them -->
+  <!-- Example format:
+  <url>
+    <loc>https://nathraktim.github.io/portfolio/project-name</loc>
+    <lastmod>2025-11-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://nathraktim.github.io/images/project-name.jpg</image:loc>
+      <image:title>Project Title</image:title>
+    </image:image>
+  </url>
+  -->
+  
+</urlset>
